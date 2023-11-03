@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        /* .container {
+            display:flex;
+            background-color: #E4DCCF;
+            justify-content: space-evenly;
+            height: 800px;
+            max-width: 1100px;
+            margin: 0 auto;
+        } */
+        body {background-color: #B9EDDD;}
+        form {display: flex; justify-content: center;}
+        select {width: 1000px; height: 50px; background-color: #D8D9CF; border-radius: 50px; margin-right: 40px; margin-top: 70px;}
+        option {text-align: center; font-size: large;}
+        input {border-radius: 20%; width: 100px; margin-top: 70px;}
+        .container {
+            display: flex;
+            width: 1500px;
+            margin: 0 auto;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            background-color: #D8D9CF;
+            width: 1000px;
+            border-radius: 40px;
+            margin-top: 20px;
+            margin-left: 190px;
+                    }
+        
+        /* .item {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background-color:#F9F5EB;
+            height: 37%;
+            width: 33.33%;
+            padding: 10px;
+            border: 1px solid #E4DCCF;
+            border-radius: 10px;
+            margin: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            } */
+            .item {
+                background-color:#F9F5EB;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                height: 50%;
+                flex-basis: 33.33%;
+                padding: 10px;
+                border: 1px solid #E4DCCF;
+                border-radius: 20px;
+                margin: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                }
+
+            .item img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                }
+        
+            h1 {
+                font-size: medium;
+            }
+        
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-light bg-dark mb-5 navbar-custom">
+        <span class="navbar-brand text-white h1"> 
+            Zomato Reviews Sentiment Analyzer
+        </span>
+    </nav>
+    <form method='post' action="/p">
+        <select name="sec">
+            <option selected disabled>Choose a restaurant</option>
+            <option value="savoureux">Savoureux</option>
+            <option value="vishalla">Vishalla</option>
+            <option value="tomatos">Tomato's</option>
+            <option value="dakshinayan">Dakshinayan</option>
+            <option value="gordhan-thaal">Gordhan Thaal</option>
+            <option value="ninis-kitchen">Nini's Kitchen</option>
+            <option value="unlocked">Unlocked</option>
+            <option value="yanki-sizzlerr">Yanki Sizzlerr</option>
+            <option value="saffron">Saffron</option>
+            <option value="toritos">Toritos</option>
+            <option value="balista">Balista</option>
+            <option value="highland-park">Highland Park</option>
+            <option value="birmies">Birmies</option>
+            <option value="sankalp">Sankalp</option>
+            <option value="jassi-de-parathe">Jassi Dear Parathe</option>
+            <option value="the-house-of-makeba">The House of Makeba</option>
+            <option value="taco-bell">Taco Bell</option>
+            <option value="starbucks-coffee">Starbuck's Coffee</option>
+            <option value="mcdonalds">McDonald's</option>
+            <option value="burger-king">Burger King</option>
+            <option value="subway">Subway</option>
+            <option value="dominos-pizza">Domino's Pizza</option>
+            <option value="la-pinoz">La Pino'z</option>
+            <option value="pizza-hut">Pizza Hut</option>
+            <option value="evening-post">Evening Post</option>
+            <option value="stuffs-food">Stuff's Food</option>
+            <option value="honest">Honest</option>
+            <option value="puffizza">Puffizza</option>
+            <option value="coffee-culture">Coffee Culture</option>
+        </select>
+        <input class="btn btn-primary" type="submit" value="Submit">
+    </form>
+    <div class="container" style="display: {{display}};">
+        <div class="item"> 
+            <h1>% Breakdown of reviews on basis of sentiment</h1>
+            <img src="..//static/images/{{filename1}}">
+        </div>
+        <div class="item">
+            <h1>Word Cloud for Frequent Positive words</h1>
+            <img src="..//static/images/{{filename2}}">
+        </div>
+        <div class="item">
+            <h1>Word Cloud for Frequent Negative words</h1>
+            <img src="..//static/images/{{filename3}}">
+        </div>
+        <div class="item">
+            <h1>Word Cloud for Frequent Neutral words</h1>
+            <img src="..//static/images/{{filename4}}">
+        </div>
+        <div class="item">
+            <h1>Overall Sentiment</h1>
+            <img src="..//static/images/{{filename5}}">
+            <!-- <h1>The sentiment score is {{sen_score}}% 🚀</h1> -->
+        </div>
+        <div class="item">
+            <h1>Sentiment Breakdown</h1>
+            <img src="..//static/images/{{filename6}}">
+        </div>
+    </div>
+
+</body>
+</html>
